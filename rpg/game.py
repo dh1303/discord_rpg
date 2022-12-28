@@ -111,15 +111,29 @@ class stage:
         pass
 
     def set_monster(self):
+        print('ㅗ')
+
+class item:
+    def __init__(self, name, rank, price) -> None:
+        self.name = name
+        self.rank = rank
+        self.price = price
+        pass
+    
+class Shop:
+    def __init__() -> None:
+        pass
+    
         
-
-
     
 # ===========================
 
 users = {}
 
 text_list = {}
+
+item_list = {"test1" : item("test1", "nomal", 15), 
+             "test2" : item("test2", "rare", 50)}
 
 # ================================
 
@@ -152,6 +166,16 @@ async def me(ctx):
     else:
         await test(ctx)
     print("[me] end")
+    
+@bot.command()
+async def shop(ctx):
+    print("[shop] start")
+    id = ctx.message.author.id
+    name = ctx.message.author.name
+    print("id :", id,"| name :", name)
+    if id in users.keys():
+        msg = await sendff(ctx, "상점", f"")
+        
     
 # ===============================
 
@@ -216,4 +240,4 @@ async def sendfr(titlef, descriptionf, colorf):
 async def sendf(ctx, msg):
     return await ctx.send(msg)
 
-bot.run('MTA1NDIwNDI1Nzk2NTk3MzU2NQ.GvEZMs.D-4bI90UqETtLiWEgS5U-25-mqYDsk4TOM8p74') #test_dojin
+bot.run('MTA1NDIwNDI1Nzk2NTk3MzU2NQ.GoXYii.s-D_6Ey3cXsORrEVCYZK8HFFeEg9_rqxopmLjU') #test_dojin
