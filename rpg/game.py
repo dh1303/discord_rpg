@@ -123,6 +123,9 @@ class item:
 class Shop:
     def __init__() -> None:
         pass
+    def dk():
+        result = f"{item_list}"
+        return result
     
         
     
